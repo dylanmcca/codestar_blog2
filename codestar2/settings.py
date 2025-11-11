@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-n0#b)76-o5^mwiii4i^_071a1m2hjh7a-x=f1!s(zjw91&a-d7'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['.herokuapp.com', '127.0.0.1']
 
@@ -85,8 +85,22 @@ WSGI_APPLICATION = 'codestar2.wsgi.application'
 #}
 
 DATABASES = {
-    "default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
+    "default": dj_database_url.parse(os.environ.get("DATABASE_URL")),
 }
+
+# #DATABASES = {
+# #    'default': {
+# #        'ENGINE': 'django.db.backends.postgresql',  # keep this as is
+# #        'NAME': 'your_db_name',
+# #        'USER': 'your_db_user',
+# #        'PASSWORD': 'your_db_password',
+# #       'HOST': 'localhost',
+#         'PORT': '5432',
+#         'OPTIONS': {
+#             'driver': 'psycopg',  # explicitly tell Django to use psycopg3
+#         },
+#     }
+# }
 
 
 # Password validation
